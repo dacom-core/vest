@@ -8,7 +8,6 @@ using namespace eosio;
 struct impl {
 	
 	void make_vesting_action(const startvest &op){
-    print("imhere");
     require_auth(op.sender);
 		eosio_assert(op.amount.is_valid(), "Amount not valid");
     eosio_assert(op.amount.symbol == _SYM, "Not valid symbol for this vesting contract");
